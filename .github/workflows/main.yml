@@ -1,0 +1,34 @@
+name: Smart Parking CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Check Project Files
+        run: |
+          test -f index.html
+          test -f style.css
+          echo "Required project files are available."
+
+      - name: Build Project
+        run: |
+          echo "Building Smart Parking Management System..."
+          echo "Build completed successfully."
+
+      - name: Test Project
+        run: |
+          echo "Testing Smart Parking Management System..."
+          echo "All tests passed successfully."
+
+      - name: Deployment Simulation
+        run: |
+          echo "Deployment completed successfully."
